@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snack Store - POS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header>
+    <h1>💰 POS - Baby GD's Mini Store</h1>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="products.html">🍿 Products</a>
+      <a href="pos.html">💰 POS</a>
+      <a href="sales.html">📊 Sales</a>
+      <a href="finance.html">📊 Finance</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Select Product</h2>
+    <form id="posForm">
+      <select id="productSelect" required></select>
+      <input type="number" id="quantity" placeholder="Qty" required min="1">
+      
+      <select id="paymentType" required>
+        <option value="cash">Cash</option>
+        <option value="credit">Credit (Dept)</option>
+      </select>
+
+      <input type="text" id="employeeName" placeholder="Employee Name" style="display: none;" />
+      <button type="submit">Add to Cart</button>
+    </form>
+
+    <h2>Cart</h2>
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h3>Total: ₱<span id="total">0</span></h3>
+
+    <div class="payment">
+      <input type="number" id="cash" placeholder="Cash Received" required min="0">
+      <button id="checkoutBtn">Checkout</button>
+      <p>Change: ₱<span id="change">0</span></p>
+    </div>
+  </main>
+
+  <script src="pos.js"></script>
+</body>
+</html>

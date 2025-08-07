@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snack Store - Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🛒 Baby GD's Mini Store</h1>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="products.html">🍿 Products</a>
+      <a href="pos.html">💰 POS</a>
+      <a href="sales.html">📊 Sales</a>
+      <a href="finance.html">📊 Finance</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Add New Product</h2>
+    <form id="productForm">
+      <input type="text" id="name" placeholder="Product Name" required>
+      <input type="text" id="category" placeholder="Category" required>
+      <input type="number" id="price" placeholder="Price" required>
+      <input type="number" id="stock" placeholder="Stock" required>
+      <button type="submit">Add Product</button>
+    </form>
+
+    <h2>Product List</h2>
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script src="products.js"></script>
+</body>
+</html>

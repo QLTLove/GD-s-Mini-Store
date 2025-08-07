@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finance Summary</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header>
+    <h1>📊 Finance Summary - Baby GD's Mini Store</h1>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="products.html">🍿 Products</a>
+      <a href="pos.html">💰 POS</a>
+      <a href="sales.html">📊 Sales</a>
+      <a href="finance.html">📊 Finance</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>📆 Monthly Finance Summary</h2>
+      <table id="monthlyEarningsTable" border="1" cellspacing="0" cellpadding="6">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Sales</th>
+            <th>Expenses</th>
+            <th>Net This Month</th>
+            <th>Cumulative Net Income</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <hr />
+    <section>
+      <h2>➕ Add Expense</h2>
+      <form id="expenseForm">
+        <input type="text" id="expenseDesc" placeholder="Description" required />
+        <input type="number" id="expenseAmount" placeholder="Amount" required step="0.01" />
+        <input type="date" id="expenseDate" required />
+        <button type="submit">➕ Add Expense</button>
+      </form>
+    </section>
+
+    <hr />
+    <section>
+      <h2>📋 All Expenses</h2>
+      <table id="expensesTable" border="1" cellspacing="0" cellpadding="6">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p><strong>Total Expenses: ₱<span id="totalExpenses">0.00</span></strong></p>
+    </section>
+  </main>
+
+  <script src="finance.js"></script>
+  <div id="notification" class="hidden"></div>
+</body>
+</html>

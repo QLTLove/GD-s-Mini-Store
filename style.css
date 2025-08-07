@@ -1,0 +1,252 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f1f8e9, #c5e1a5);
+  color: #3e3e3e;
+  min-height: 100vh;
+  padding: 1em;
+}
+
+/* Header */
+header {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1.5em;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  margin-bottom: 2em;
+  color: #2e7d32;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+nav {
+  margin-top: 0.5em;
+}
+
+nav a {
+  color: #2e7d32;
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #66bb6a;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2em;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+
+form input,
+form select {
+  padding: 0.75em;
+  border-radius: 8px;
+  border: none;
+  background: rgba(129, 199, 132, 0.2);
+  color: #2e7d32;
+  min-width: 200px;
+  backdrop-filter: blur(5px);
+}
+
+form input::placeholder {
+  color: #81c784;
+}
+
+form button {
+  padding: 0.75em 1.5em;
+  background: #81c784;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2em;
+  background-color: #f1f8e9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table th, table td {
+  border: 1px solid #c8e6c9;
+  padding: 0.75em;
+  text-align: center;
+}
+
+table th {
+  background-color: #dcedc8;
+  color: #33691e;
+}
+
+table td {
+  color: #2e7d32;
+}
+
+/* Buttons and extras */
+button, .btn {
+  padding: 0.75em 1.5em;
+  margin: 0.5em;
+  border: none;
+  border-radius: 8px;
+  background: #81c784;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover, .btn:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+
+/* Dashboard cards */
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.card {
+  flex: 1;
+  padding: 1.5em;
+  background: #e8f5e9;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: #388e3c;
+}
+
+.card h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.card p {
+  font-size: 2em;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+  }
+}
+
+.shortcuts .buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.shortcuts .btn {
+  padding: 1em 2em;
+  background: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.shortcuts .btn:hover {
+  background: #43a047;
+}
+
+/* Filter Section */
+.filter-section {
+  background: rgba(129, 199, 132, 0.3);
+  border-radius: 8px;
+  padding: 0.8em 1em;
+  margin-bottom: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Filter inputs */
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.filter-group input[type="text"],
+.filter-group input[type="date"] {
+  padding: 0.2em 0.4em;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.2s;
+  flex: 1 1 110px;
+}
+
+.filter-group input[type="text"]:focus,
+.filter-group input[type="date"]:focus {
+  border: 1px solid #388e3c;
+  box-shadow: 0 0 3px rgba(56, 142, 60, 0.3);
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Notification */
+#notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#notification.success {
+  background-color: #81c784;
+}
+
+#notification.error {
+  background-color: #e53935;
+}

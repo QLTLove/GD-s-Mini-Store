@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snack Store - Sales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📊 Sales Report - Baby GD's Mini Store</h1>
+    <nav>
+      <a href="dashboard.html">🏠 Dashboard</a>
+      <a href="products.html">🍿 Products</a>
+      <a href="pos.html">💰 POS</a>
+      <a href="sales.html">📊 Sales</a>
+      <a href="finance.html">📊 Finance</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- 🔍 FILTER SECTION -->
+<section class="filter-section">
+  <h2 style="margin-bottom: 0.5em;">🔍 Filter Sales</h2>
+  <div class="filter-group">
+    <input type="text" id="searchName" placeholder="Search name..." oninput="renderTables()" />
+    <input type="date" id="startDate" onchange="renderTables()" />
+    <input type="date" id="endDate" onchange="renderTables()" />
+  </div>
+</section>
+
+
+    <h2>💵 Cash Sales</h2>
+    <table id="cashTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Items</th>
+          <th>Total</th>
+          <th>Cash</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <h3>Total Cash Sales:<span id="cashTotal">0.00</span></h3>
+    <hr />
+
+    <h2>🧾 Credit / Dept Sales</h2>
+    <table id="creditTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Customer</th>
+          <th>Items</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <h3>Total Credit Sales:<span id="creditTotal">0.00</span></h3>
+   <button onclick="printAllCreditReceipts()">🖨️ Print Credit Receipts (9 per page)</button>
+
+
+    <hr />
+    <button onclick="exportToExcel()">📤 Export All Sales</button>
+    <button onclick="clearSales()">🗑️ Clear All Sales</button>
+  </main>
+
+  <script src="sales.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+</html>
